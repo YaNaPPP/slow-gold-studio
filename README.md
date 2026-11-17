@@ -16,9 +16,9 @@ Landing page for a jewellery studio that makes handcrafted pieces from recycled 
 ## Design system
 
 - Text: Host Grotesk (light weights, tight tracking for headlines)
-- Accent: Bodoni Moda italic, only for single emphasised words in headlines
-- Hero only: Bodoni 72 Smallcaps and Ballet, as in the Figma file
-- All fonts are self-hosted in `assets/fonts/` and preloaded; a short loader holds the page until fonts and the hero scene are ready
+- Serif: ITC Bodoni Seventytwo (Monotype), licensed for web through an Adobe Fonts web project (kit `oxj7wkk`). Used for the hero headline and, in capitals only, on brand objects: wordmark, piece names, Gold Passport. Bodoni Moda is the self-hosted fallback
+- Script: Ballet, hero only, as in the Figma file
+- Host Grotesk and Ballet are self-hosted in `assets/fonts/` and preloaded; a short loader holds the page until fonts and the hero scene are ready
 
 ## Tech
 

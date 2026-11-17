@@ -620,7 +620,8 @@
   canvas.addEventListener('contextmenu', e => e.preventDefault());
 
   resize();
-  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  /* wait for the licensed hero serif (Adobe Fonts kit) and the script before measuring letters */
+  const fonts = document.fonts ? Promise.all(['400 80px itc-bodoni-seventytwo-pro', '400 80px Ballet'].map(f => document.fonts.load(f, 'THROUGH PATIENT HANDS Gold Reborn').catch(() => null))).then(() => document.fonts.ready) : Promise.resolve();
   Promise.race([fonts, new Promise(r => setTimeout(r, 2500))]).then(() => {
     measureLetters();
     gsap.set(G, { x: 0, y: .38 });

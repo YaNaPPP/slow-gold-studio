@@ -27,11 +27,11 @@
   --hot:#fff1c8;
   /* hero (Figma) */
   --f-script:"Ballet","Pinyon Script",cursive;
-  --f-serif:"Bodoni 72 Smallcaps","Bodoni 72","Bodoni Moda","Didot",Georgia,serif;
+  --f-serif:"itc-bodoni-seventytwo-pro","Bodoni 72 Smallcaps","Bodoni 72","Bodoni Moda","Didot",Georgia,serif;
   --f-sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
   /* page */
   --f-text:"Host Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --f-accent:"Bodoni Moda","Didot",Georgia,serif;
+  --f-accent:"itc-bodoni-seventytwo-pro","Bodoni Moda","Didot",Georgia,serif;
   --pad:clamp(20px, 3.4vw, 64px);
   --maxw:1760px;
   --s-ui:clamp(13px, 1.1vw, 21px);
