@@ -508,4 +508,4 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 @media (max-width: 520px){ .bar-chapters .lg{display:none} }
 @media (max-width: 400px){ .bar-chapters a i{display:none} .bar .bar-cta{padding-inline:14px} .bar{column-gap:10px} }
 @media (max-width: 700px){ .drawer img{object-position:44% 30%} }
-.plate img,.drawer img,.tile-media img{will-change:transform}
+.plate img,.drawer img{will-change:transform}
