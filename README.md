@@ -9,8 +9,8 @@ Landing page for a jewellery studio that makes handcrafted pieces from recycled 
 | Hero | Melts an old wedding band, pours it, hammers it; it cools onto a stone ledge | Wow moment, sets the idea: same gold, new shape |
 | I Why recycled | An open drawer of forgotten family gold, lit by a torch the visitor moves; three plain facts | Why recycled gold (World Gold Council figures) |
 | II Your gold | The same three pieces are weighed in a ledger, heat up, melt into one pool (WebGL) and resolve into the finished band | The remake service, emotional core, first call to action |
-| III The making | Four weeks at one bench as printed plates: sketch, scale, crucible, mandrel, Gold Passport | Proof of craft, removes doubt about the process |
-| IV Pieces and prices | Morning comes in: four pieces in window light on travertine, with museum labels and craft prices | Products and clear pricing logic |
+| III The making | Four weeks at one bench as printed plates: sketch, weighing, pour, forging, engraving | Proof of craft, removes doubt about the process |
+| IV Pieces and prices | Morning comes in: four sculptural pieces (The Keeper, The Promise, The Heirloom, The Drop) worn or on travertine, with labels and craft prices | Products and clear pricing logic |
 | V Begin | Four-step builder that fills in a draft Gold Passport, stamped on sending; four open questions | Conversion, risk reversal |
 
 ## Design system
@@ -47,7 +47,10 @@ Requests open the visitor's email app with the request written out. To receive t
 
 ## Images
 
-Every image after the hero is a 3D render made for this site with three.js (one night light for the drawer and the bench, one morning window light for the pieces), so there is nothing to license. Hands and pieces worn on skin would need licensed photography. Prices are placeholders.
+- The drawer, the bench and the collection are AI-generated photographs made in ChatGPT from one prompt set (style bible + one prompt per shot): night scenes under one warm lamp from the upper right, morning scenes in window light from the left. They are graded to one look (lifted blacks, fine grain) and exported as WebP with a small version for phones.
+- 3D stays where it does something photography cannot: the interactive hero and the melt in chapter 02 (three.js and a WebGL shader), plus the three heirloom cut-outs that hand over to the melt.
+- New images get new file names: `/assets` is cached as immutable, so an overwritten file would keep showing the old version.
+- Prices are placeholders.
 
 ## Run locally
 

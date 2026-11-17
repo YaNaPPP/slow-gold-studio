@@ -70,7 +70,7 @@
     const d = $('#drawer'); if (!d) return;
     const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
     /* the beam enters from the upper right, where the hero's light was, and settles on the three pieces */
-    const home = () => innerWidth <= 700 ? { x: 48, y: 36 } : { x: 47, y: 44 };
+    const home = () => innerWidth <= 700 ? { x: 60, y: 34 } : { x: 66, y: 42 };
     const L = { x: 84, y: 8 }, goal = { ...home() };
     let raf = 0, visible = false, last = 0;
     const set = () => { d.style.setProperty('--x', L.x.toFixed(2) + '%'); d.style.setProperty('--y', L.y.toFixed(2) + '%'); };
@@ -149,8 +149,7 @@
     if (reduce) return;
     $$('.plate-row').forEach(row => {
       const pl = $('.plate', row), img = $('img', pl), txt = $$('.plate-text > *', row);
-      gsap.fromTo(pl, { clipPath: 'inset(10% 0% 10% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: row, start: 'top 85%', once: true } });
-      gsap.fromTo(img, { scale: 1.14 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: row, start: 'top bottom', end: 'bottom top', scrub: true } });
+      gsap.fromTo(img, { clipPath: 'inset(10% 0% 10% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: row, start: 'top 85%', once: true } });
       gsap.from(txt, { autoAlpha: 0, y: 18, duration: 1, stagger: .08, ease: 'power3.out', scrollTrigger: { trigger: row, start: 'top 70%', once: true } });
     });
   })();
@@ -202,8 +201,8 @@
     const SRC = { own: 'Your own gold', studio: 'Studio gold', mix: 'Yours and ours' };
     const FORMS = { ring: 'A ring', pendant: 'A pendant', earrings: 'Earrings', bracelet: 'A bracelet', unsure: 'We suggest options' };
     const CRAFT = { ring: 380, pendant: 320, earrings: 290, bracelet: 460 };
-    const PIECES = { keeper: { form: 'ring', name: 'The Keeper', price: 420, g: 7.8 }, promise: { form: 'ring', name: 'The Promise', price: 680, g: 5 },
-      gathering: { form: 'ring', name: 'The Gathering', price: 290, g: 2.6 }, heirloom: { form: 'pendant', name: 'The Heirloom', price: 320, g: 4.5 },
+    const PIECES = { keeper: { form: 'ring', name: 'The Keeper', price: 640, g: 8.5 }, promise: { form: 'ring', name: 'The Promise', price: 780, g: 5 },
+      heirloom: { form: 'pendant', name: 'The Heirloom', price: 560, g: 6 }, drop: { form: 'earrings', name: 'The Drop', price: 720, g: 10 },
       idea: { form: 'unsure', name: 'Your own idea' } };
     const arrow = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg>';
     const flash = el => { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); };

@@ -506,7 +506,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 @media (max-width: 520px){ .bar-chapters .lg{display:none} }
 @media (max-width: 400px){ .bar-chapters a i{display:none} .bar .bar-cta{padding-inline:14px} .bar{column-gap:10px} }
 @media (max-width: 700px){ .drawer img{object-position:44% 30%} }
-.plate img,.drawer img{will-change:transform}
+.drawer img{will-change:transform}
 
 /* ============================== COMPOSITION SYSTEM ==============================
    Taken from the hero: small sans captions sit at the corners and the centre of a line,
@@ -572,3 +572,17 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   .foot-base .r{justify-self:start}
 }
 .foot-base{border-top:0;padding-top:30px}
+
+/* ---------- photography pass ---------- */
+.plate{aspect-ratio:auto;overflow:visible;background:none}
+.plate img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#0f0d0b}
+.plate-row.tall .plate{grid-column:2 / span 5}
+.plate-row.tall .plate img{aspect-ratio:2/3}
+.plate-row.tall .plate-text{grid-column:8 / span 4;align-self:center}
+.tile-media{aspect-ratio:2/3}
+.tile.feature .tile-media{aspect-ratio:3/2}
+@media (max-width: 900px){
+  .plate-row.tall .plate,.plate-row.tall .plate-text{grid-column:1}
+  .plate-row.tall .plate{width:78%}
+}
+@media (max-width: 700px){ .drawer img{object-position:62% 30%} }
