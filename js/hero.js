@@ -24,7 +24,8 @@
   }
 
   const hasGL = (() => { try { const c = document.createElement('canvas'); return !!(window.THREE && (c.getContext('webgl2') || c.getContext('webgl'))); } catch(e){ return false; } })();
-  if (!hasGL || !window.gsap){ hero.classList.add('nogl'); fitStage(); addEventListener('resize', fitStage); return; }
+  const ready = () => { api.ready = true; dispatchEvent(new Event('sg:ready')); };
+  if (!hasGL || !window.gsap){ hero.classList.add('nogl'); fitStage(); addEventListener('resize', fitStage); setTimeout(ready, 0); return; }
   function fitStage(){
     vw = hero.clientWidth || innerWidth; vh = hero.clientHeight || innerHeight;
     measureLetters();
@@ -626,5 +627,6 @@
     enterIntro();
     if (reduce) skipToSite();
     start();
+    requestAnimationFrame(() => requestAnimationFrame(ready));
   });
 })();
