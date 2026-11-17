@@ -93,50 +93,31 @@
   </div>
 </section>
 
-<!-- ============ 01 — THE GOLD ============ -->
+<!-- ============ 01 — WHY RECYCLED ============ -->
 <section class="chapter" id="gold" data-chapter="gold" aria-labelledby="gold-title">
-  <div class="gold-open">
-    <canvas id="liquid" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <div>
-        <h2 class="t-xl" id="gold-title" data-split>Gold doesn’t wear out. It waits.</h2>
-      </div>
-      <div class="row">
-        <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
-        <p class="body body-lg">Almost every gram ever mined still exists: in vaults, in coins, and in drawers as rings nobody wears and chains that broke years ago. We never dig for new gold. We give gold that already has a story a second life.</p>
-      </div>
+  <div class="drawer" id="drawer">
+    <picture class="drawer-dark">
+      <source media="(max-width: 700px)" srcset="assets/img/drawer-phone.webp">
+      <img src="assets/img/drawer.webp" srcset="assets/img/drawer-sm.webp 1200w, assets/img/drawer.webp 2400w" sizes="100vw" alt="An open drawer lined with green velvet. A worn wedding band, a broken chain, a single earring and an old note lie inside." width="2400" height="1350">
+    </picture>
+    <picture class="drawer-lit" aria-hidden="true">
+      <source media="(max-width: 700px)" srcset="assets/img/drawer-phone.webp">
+      <img src="assets/img/drawer.webp" srcset="assets/img/drawer-sm.webp 1200w, assets/img/drawer.webp 2400w" sizes="100vw" alt="" width="2400" height="1350">
+    </picture>
+    <div class="wrap drawer-copy">
+      <h2 class="t-xl" id="gold-title" data-split>Gold doesn’t wear out. It waits.</h2>
+      <p class="body body-lg">Almost every gram ever mined still exists. Much of it lies in drawers like this one: a ring nobody wears, a chain that broke, an earring that lost its pair.</p>
     </div>
+    <p class="drawer-hint" aria-hidden="true">Move the light</p>
   </div>
 
-  <div class="wrap stock">
-    <div class="stock-top">
-      <p class="big-num" aria-label="224,200 tonnes"><span data-count="224200">224,200</span><small>t</small></p>
-      <div>
-        <p class="t-m">All the gold mined in human history. Still here.</p>
-        <p class="body" style="margin-top:16px">Gold doesn’t rust, rot or get used up. Melted together, all of it would make a cube about 22 metres wide.</p>
-      </div>
-    </div>
-
-    <div class="share" id="share" role="img" aria-label="Where the world’s gold is: jewellery 44 percent, bars and coins 21, central banks 18, other uses 11, funds and trading 6.">
-      <div class="share-bar">
-        <div class="jw" style="--w:44%"></div>
-        <div style="--w:21%"></div>
-        <div style="--w:18%"></div>
-        <div style="--w:11%"></div>
-        <div style="--w:6%"></div>
-      </div>
-      <div class="share-legend" aria-hidden="true">
-        <div class="jw" style="--w:44%"><b>44%</b><span>Jewellery</span></div>
-        <div style="--w:21%"><b>21%</b><span>Bars and coins</span></div>
-        <div style="--w:18%"><b>18%</b><span>Central banks</span></div>
-        <div style="--w:11%"><b>11%</b><span>Other uses</span></div>
-        <div style="--w:6%"><b>6%</b><span>Funds</span></div>
-      </div>
-    </div>
-
-    <div class="stock-foot">
-      <p class="t-m">Almost half of it is jewellery: 98,700 tonnes, much of it waiting in drawers. That is where we start.</p>
-      <div class="zero"><b>0<small>g</small></b><p>of newly mined gold goes into anything we make.</p></div>
+  <div class="wrap facts">
+    <div class="fact"><b class="num">224,200 t</b><p>All the gold ever mined. Melted together, it would make a cube about 22 metres wide.</p></div>
+    <div class="fact"><b class="num">44%</b><p>of it is jewellery: about 98,700 tonnes, much of it waiting in drawers. That is where we start.</p></div>
+    <div class="fact"><b class="num">0 g</b><p>of newly mined gold goes into anything we make.</p></div>
+    <div class="fact-q">
+      <h3>Is recycled gold as good as new?</h3>
+      <p>Yes. Gold is an element, so it never wears out. Refining brings it back to the same purity as freshly mined gold, and every piece is hallmarked 585 (14k) or 750 (18k).</p>
     </div>
     <p class="source">Figures: <a href="https://www.gold.org/goldhub/data/how-much-gold" target="_blank" rel="noopener">World Gold Council</a>, above-ground stocks, end of Q3 2026.</p>
   </div>
@@ -148,30 +129,35 @@
     <canvas id="metal" aria-hidden="true"></canvas>
     <img class="fallback" src="assets/img/ring-final.webp" alt="A wide hammered gold band" loading="lazy" width="1400" height="1400">
     <div class="glow" aria-hidden="true"></div>
+    <img class="heir" id="heir0" src="assets/img/heir-ring.webp" alt="" aria-hidden="true" width="394" height="416">
+    <img class="heir" id="heir1" src="assets/img/heir-chain.webp" alt="" aria-hidden="true" width="530" height="126">
+    <img class="heir" id="heir2" src="assets/img/heir-earring.webp" alt="" aria-hidden="true" width="207" height="494">
     <div class="final-ring" id="finalRing" aria-hidden="true"><img src="assets/img/ring-final.webp" alt="" loading="lazy" width="1400" height="1400"></div>
     <div class="final-cap" id="finalCap"><b>The Keeper</b><span>18k recycled gold · 7.8 g</span></div>
-    <div class="tag" id="tag0"><span>Grandmother’s ring</span><b class="num">3.2 g</b></div>
-    <div class="tag" id="tag1"><span>A chain that broke</span><b class="num">2.9 g</b></div>
-    <div class="tag" id="tag2"><span>A single earring</span><b class="num">1.7 g</b></div>
 
     <div class="melt-copy">
       <h2 class="sr-only" id="remake-title">How old family gold becomes one new piece</h2>
       <div class="melt-stages">
         <div class="melt-stage on" data-stage="0">
-          <h3 class="t-l">A ring from your grandmother. A chain that broke. An earring that lost its pair.</h3>
-          <p class="body">Most families keep gold like this. Too precious to throw away, too broken or too old-fashioned to wear.</p>
+          <h3 class="t-l">Three pieces from one family.</h3>
+          <dl class="ledger" id="ledger">
+            <div><dt>Grandmother’s wedding ring</dt><dd class="num">3.2 g</dd></div>
+            <div><dt>A chain that broke</dt><dd class="num">2.9 g</dd></div>
+            <div><dt>A single earring</dt><dd class="num">1.7 g</dd></div>
+            <div class="total"><dt>Weighed in front of you</dt><dd class="num">7.8 g</dd></div>
+          </dl>
         </div>
         <div class="melt-stage" data-stage="1">
           <h3 class="t-l">Melted together at <span class="num">1,064 °C.</span></h3>
-          <p class="body">We weigh everything in front of you first. Then the fire lets the gold forget its old shapes and keep everything else.</p>
+          <p class="body">The fire lets the gold forget its old shapes and keep everything else.</p>
         </div>
         <div class="melt-stage" data-stage="2">
           <h3 class="t-l">Every gram stays yours.</h3>
           <p class="body">Your gold is never mixed with anyone else’s. What goes into the crucible comes out again, and the scale proves it.</p>
         </div>
         <div class="melt-stage" data-stage="3">
-          <h3 class="t-l">One piece, worn every day. Still 7.8 g. Still hers.</h3>
-          <p class="body">The same gold, hammered by hand into a shape that fits the person who wears it now.</p>
+          <h3 class="t-l">7.8 g in. 7.8 g out.</h3>
+          <p class="body">The same gold, hammered by hand into one piece for the person who wears it now.</p>
           <div class="ctas">
             <a class="btn btn-solid" href="#begin" data-source="own">Begin with my gold <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
             <a class="btn btn-ghost" href="#begin" data-source="studio">Begin with studio gold</a>
@@ -190,144 +176,118 @@
 <!-- ============ 03 — THE MAKING ============ -->
 <section class="chapter" id="making" data-chapter="making" aria-labelledby="making-title">
   <div class="wrap making-head">
-    <div>
-      <h2 class="t-l" id="making-title" data-split>Four weeks. One pair of hands.</h2>
-    </div>
+    <h2 class="t-l" id="making-title" data-split>Four weeks at one bench.</h2>
     <div>
       <p class="body body-lg">No moulds and no production line. One goldsmith takes your piece from the first sketch to the last polish, and you see every step.</p>
       <a class="arrow-link skip-ch" href="#pieces">Skip to pieces and prices <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 2v12M3 9l5 5 5-5"/></svg></a>
     </div>
   </div>
 
-  <div class="making-pin" id="makingPin">
-    <div class="wrap timeline" aria-hidden="true"><span class="wk">Week 1</span><span class="line"><i id="tlLine"></i></span><span class="wk">Week 4</span></div>
-    <div class="track" id="track">
-      <article class="step" data-step="0">
-        <div>
-          <span class="step-no"><b>01</b> / 04 · Week 1</span>
-          <h3 class="t-l">We listen</h3>
-          <p class="body">Tell us whose gold it was and who will wear it next. We draw the piece around that story and send you a sketch with the final weight and price. Nothing is melted until you say yes.</p>
-        </div>
-        <div class="step-visual">
-          <div class="sketch" role="img" aria-label="A sketch of a wide band with a note: for Mila, from Oma’s ring">
-            <span class="meta">Sketch 01<br>Wide band · 7.8 g</span>
-            <svg viewBox="0 0 400 320" aria-hidden="true">
-              <ellipse class="draw" cx="200" cy="150" rx="120" ry="58"/>
-              <ellipse class="draw" cx="200" cy="168" rx="120" ry="58"/>
-              <path class="draw" d="M80 150 L80 170 M320 150 L320 170"/>
-              <ellipse class="draw" cx="200" cy="152" rx="96" ry="40"/>
-              <path class="draw faint" d="M112 196 q10 -6 18 2 M150 210 q12 -8 22 1 M200 216 q10 -7 20 0 M244 211 q12 -7 20 1 M282 197 q9 -5 16 2"/>
-              <path class="draw faint" d="M60 268 L340 268 M60 262 L60 274 M340 262 L340 274"/>
-            </svg>
-            <span class="note">For Mila, from Oma’s ring</span>
-          </div>
-        </div>
-      </article>
-      <article class="step" data-step="1">
-        <div>
-          <span class="step-no"><b>02</b> / 04 · Week 2</span>
-          <h3 class="t-l">We melt</h3>
-          <p class="body">Your gold is weighed in front of you, or on video if you send it. Then it is melted at 1,064 °C, refined and cast into one small bar. Only your gold is in the crucible.</p>
-        </div>
-        <div class="step-visual v-melt">
-          <figure class="plate big"><img src="assets/img/melt-flame.webp" alt="An old ring held in a torch flame" loading="lazy" width="868" height="1080"></figure>
-          <figure class="plate small"><img src="assets/img/molten-grains.webp" alt="Gold grains melting in a crucible" loading="lazy" width="348" height="522"></figure>
-        </div>
-      </article>
-      <article class="step" data-step="2">
-        <div>
-          <span class="step-no"><b>03</b> / 04 · Weeks 2–3</span>
-          <h3 class="t-l">We forge</h3>
-          <p class="body">The bar is rolled, bent and hammered into shape by hand. Every mark on the surface is a hammer strike, so no two pieces look alike, not even two made from the same gold.</p>
-        </div>
-        <div class="step-visual v-forge">
-          <figure class="plate"><img src="assets/img/forge-hands.webp" alt="A goldsmith’s hands working at the bench" loading="lazy" width="392" height="491"></figure>
-          <figure class="plate second"><img src="assets/img/flame-ring.webp" alt="A ring held in a small flame while it is shaped" loading="lazy" width="409" height="492"></figure>
-        </div>
-      </article>
-      <article class="step" data-step="3">
-        <div>
-          <span class="step-no"><b>04</b> / 04 · Week 4</span>
-          <h3 class="t-l">We write it down</h3>
-          <p class="body">Your piece comes with its Gold Passport: the weight that went in, the weight that came out, where the gold came from and the story you told us. So it can be passed on again one day.</p>
-        </div>
-        <div class="step-visual">
-          <div class="passport" id="passport">
-            <header><b>Gold Passport</b><span>No. 0142</span></header>
-            <dl>
-              <dt>Piece</dt><dd data-type>The Keeper, wide band</dd>
-              <dt>Gold from</dt><dd data-type>Wedding band, chain, earring</dd>
-              <dt>Weight in</dt><dd data-type>7.8 g</dd>
-              <dt>Weight out</dt><dd data-type>7.8 g</dd>
-              <dt>Alloy</dt><dd data-type>18k · hallmark 750</dd>
-              <dt>Story</dt><dd class="story" data-type>For Mila, from Oma’s ring</dd>
-            </dl>
-            <div class="seal" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#circ">Slow Gold · 18 karat · recycled ·</textPath></text></svg>
-              <b>750</b>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
+  <div class="wrap plates">
+    <article class="plate-row">
+      <figure class="plate"><img src="assets/img/bench-sketch.webp" srcset="assets/img/bench-sketch-sm.webp 800w, assets/img/bench-sketch.webp 1600w" sizes="(max-width: 900px) 100vw, 62vw" alt="A pencil sketch of a wide band on the bench, with the three old pieces beside it and a note: for Mila, from Oma’s ring" loading="lazy" width="1600" height="1280"></figure>
+      <div class="plate-text">
+        <span class="wk">Week 1</span>
+        <h3 class="t-m">We listen and draw.</h3>
+        <p class="body">Tell us whose gold it was and who will wear it next. We draw the piece around that story and send you the sketch with the final weight and price. Nothing is melted until you say yes.</p>
+      </div>
+    </article>
+    <article class="plate-row flip">
+      <figure class="plate"><img src="assets/img/bench-scale.webp" srcset="assets/img/bench-scale-sm.webp 800w, assets/img/bench-scale.webp 1600w" sizes="(max-width: 900px) 100vw, 62vw" alt="The three old pieces on a jeweller’s scale reading 7.80 grams" loading="lazy" width="1600" height="1280"></figure>
+      <div class="plate-text">
+        <span class="wk">Week 2</span>
+        <h3 class="t-m">We weigh it with you.</h3>
+        <p class="body">Bring your gold to the atelier, or send it with insured shipping we arrange. We film the weighing and send you the video before anything is melted.</p>
+      </div>
+    </article>
+    <article class="plate-row">
+      <figure class="plate"><img src="assets/img/bench-crucible.webp" srcset="assets/img/bench-crucible-sm.webp 800w, assets/img/bench-crucible.webp 1600w" sizes="(max-width: 900px) 100vw, 62vw" alt="Molten gold glowing in a crucible, a small cast bar beside it" loading="lazy" width="1600" height="1280"></figure>
+      <div class="plate-text">
+        <span class="wk">Week 2</span>
+        <h3 class="t-m">We melt and cast.</h3>
+        <p class="body">At 1,064 °C the old pieces become one small bar. Only your gold is in the crucible.</p>
+      </div>
+    </article>
+    <article class="plate-row flip">
+      <figure class="plate"><img src="assets/img/bench-forge.webp" srcset="assets/img/bench-forge-sm.webp 800w, assets/img/bench-forge.webp 1600w" sizes="(max-width: 900px) 100vw, 62vw" alt="A hammered gold band on a steel mandrel, a planishing hammer beside it" loading="lazy" width="1600" height="1280"></figure>
+      <div class="plate-text">
+        <span class="wk">Weeks 2–3</span>
+        <h3 class="t-m">We forge by hand.</h3>
+        <p class="body">The bar is rolled, bent and hammered into shape. Every mark on the surface is a hammer strike, so no two pieces look alike, not even two made from the same gold.</p>
+      </div>
+    </article>
+    <article class="plate-row">
+      <figure class="plate"><img src="assets/img/bench-passport.webp" srcset="assets/img/bench-passport-sm.webp 800w, assets/img/bench-passport.webp 1600w" sizes="(max-width: 900px) 100vw, 62vw" alt="A Gold Passport card listing the piece, the gold it came from and its weight in and out, with a 750 hallmark seal and the finished band" loading="lazy" width="1600" height="1280"></figure>
+      <div class="plate-text">
+        <span class="wk">Week 4</span>
+        <h3 class="t-m">We write it down.</h3>
+        <p class="body">Your piece comes with its Gold Passport: the weight that went in, the weight that came out, where the gold came from and the story you told us. So it can be passed on again one day.</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- ============ 04 — PIECES ============ -->
+<!-- ============ 04 — PIECES AND PRICES ============ -->
 <section class="chapter" id="pieces" data-chapter="pieces" aria-labelledby="pieces-title">
   <div class="daylight light-zone" id="daylight">
     <div class="wrap">
       <div class="pieces-head">
-        <div>
-          <h2 class="t-l" id="pieces-title" data-split>Made once. Never repeated.</h2>
-        </div>
-        <p class="body body-lg">These are starting points, not stock. Your piece carries your gold, your weight and its own hammer marks.</p>
+        <h2 class="t-l" id="pieces-title" data-split>By morning, it is finished.</h2>
+        <p class="body body-lg">Four starting points, not stock. Your piece carries your gold, your weight and its own hammer marks.</p>
       </div>
 
       <div class="pricing">
-        <div><b>With your gold</b><p>You only pay for the craft. The prices below are craft prices.</p></div>
+        <div><b>With your gold</b><p>You pay for the craft only. The prices below are craft prices.</p></div>
         <div><b>With our gold</b><p>Craft, plus recycled gold by weight at the day’s price. You see both before anything starts.</p></div>
       </div>
 
       <div class="gallery">
-        <article class="tile">
-          <div class="tile-media"><img src="assets/img/piece-keeper.webp" alt="A wide hammered gold band" loading="lazy" width="1200" height="1500"><span class="idx">01</span></div>
-          <div class="tile-body">
-            <h3 class="piece-name">The Keeper</h3><span class="price">from €420</span>
+        <article class="tile feature">
+          <div class="tile-media"><img src="assets/img/piece-keeper-wide.webp" srcset="assets/img/piece-keeper-wide-sm.webp 1000w, assets/img/piece-keeper-wide.webp 2000w" sizes="(max-width: 900px) 100vw, 90vw" alt="A wide hammered gold band standing on travertine in morning window light" loading="lazy" width="2000" height="1250"></div>
+          <div class="label-card">
+            <h3 class="piece-name">The Keeper</h3>
+            <p class="from">Often made from a wedding band and a broken chain.</p>
             <p>A wide, hammered band for gold you inherited. Wide enough to carry two lives.</p>
-            <div class="meta"><span>Ring · 5–8 g</span><a class="arrow-link" href="#begin" data-piece="keeper">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></div>
+            <dl><div><dt>Ring</dt><dd>5–8 g</dd></div><div><dt>Craft</dt><dd>from €420</dd></div></dl>
+            <a class="arrow-link" href="#begin" data-piece="keeper">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
           </div>
         </article>
         <article class="tile">
-          <div class="tile-media"><img src="assets/img/piece-promise.webp" alt="Close-up of a polished gold engagement ring with a solitaire stone" loading="lazy" width="628" height="590" style="object-position:50% 30%"><span class="idx">02</span></div>
-          <div class="tile-body">
-            <h3 class="piece-name">The Promise</h3><span class="price">from €680</span>
+          <div class="tile-media"><img src="assets/img/piece-promise.webp" srcset="assets/img/piece-promise-sm.webp 600w, assets/img/piece-promise.webp 1200w" sizes="(max-width: 900px) 100vw, 30vw" alt="A slim gold engagement ring with a four-claw setting and a clear stone" loading="lazy" width="1200" height="1500"></div>
+          <div class="label-card">
+            <h3 class="piece-name">The Promise</h3>
+            <p class="from">Often made from a mother’s ring, her stone reset.</p>
             <p>An engagement ring cast from family gold, set with your stone or a recycled one we find for you.</p>
-            <div class="meta"><span>Ring with stone · 4–6 g</span><a class="arrow-link" href="#begin" data-piece="promise">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></div>
+            <dl><div><dt>Ring with stone</dt><dd>4–6 g</dd></div><div><dt>Craft</dt><dd>from €680</dd></div></dl>
+            <a class="arrow-link" href="#begin" data-piece="promise">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
           </div>
         </article>
         <article class="tile">
-          <div class="tile-media"><img src="assets/img/piece-gathering.webp" alt="Three slim gold rings stacked together, one polished, one hammered, one plain" loading="lazy" width="1200" height="1500"><span class="idx">03</span></div>
-          <div class="tile-body">
-            <h3 class="piece-name">The Gathering</h3><span class="price">from €290 each</span>
+          <div class="tile-media"><img src="assets/img/piece-gathering.webp" srcset="assets/img/piece-gathering-sm.webp 600w, assets/img/piece-gathering.webp 1200w" sizes="(max-width: 900px) 100vw, 30vw" alt="Three slim gold rings standing side by side: one polished, one hammered, one matte" loading="lazy" width="1200" height="1500"></div>
+          <div class="label-card">
+            <h3 class="piece-name">The Gathering</h3>
+            <p class="from">Often made from one grandmother’s gold, shared by three.</p>
             <p>Slim rings from several family pieces, one for each person who shares the story.</p>
-            <div class="meta"><span>Set of rings · 2–3 g each</span><a class="arrow-link" href="#begin" data-piece="gathering">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></div>
+            <dl><div><dt>Set of rings</dt><dd>2–3 g each</dd></div><div><dt>Craft</dt><dd>from €290 each</dd></div></dl>
+            <a class="arrow-link" href="#begin" data-piece="gathering">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
           </div>
         </article>
         <article class="tile">
-          <div class="tile-media"><img src="assets/img/piece-heirloom.webp" alt="A hammered gold medallion on a fine chain" loading="lazy" width="1200" height="1500"><span class="idx">04</span></div>
-          <div class="tile-body">
-            <h3 class="piece-name">The Heirloom</h3><span class="price">from €320</span>
-            <p>A hammered medallion from a coin, a chain or a single earring, worn close to the heart.</p>
-            <div class="meta"><span>Pendant · 3–6 g</span><a class="arrow-link" href="#begin" data-piece="heirloom">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></div>
+          <div class="tile-media"><img src="assets/img/piece-heirloom.webp" srcset="assets/img/piece-heirloom-sm.webp 600w, assets/img/piece-heirloom.webp 1200w" sizes="(max-width: 900px) 100vw, 30vw" alt="A hammered gold medallion on a fine chain, lying on travertine" loading="lazy" width="1200" height="1500"></div>
+          <div class="label-card">
+            <h3 class="piece-name">The Heirloom</h3>
+            <p class="from">Often made from a coin or a single earring.</p>
+            <p>A hammered medallion worn close to the heart, on its own fine chain.</p>
+            <dl><div><dt>Pendant</dt><dd>3–6 g</dd></div><div><dt>Craft</dt><dd>from €320</dd></div></dl>
+            <a class="arrow-link" href="#begin" data-piece="heirloom">Begin with this piece <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
           </div>
         </article>
       </div>
 
       <div class="idea">
-        <p class="t-l">Something only you would ask for?</p>
+        <p class="t-m">Something only you would ask for?</p>
         <div class="actions">
-          <p class="body">Cufflinks from a watch case, a pair for an earring that lost its own. Bring the story and we draw the piece. The price comes with the first sketch.</p>
+          <p class="body">Cufflinks from a watch case, a new pair for an earring that lost its own. Bring the story and we draw the piece. The price comes with the first sketch.</p>
           <a class="btn btn-solid" href="#begin" data-piece="idea">Begin with your idea <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
         </div>
       </div>
@@ -396,15 +356,19 @@
         <div class="sent" id="sent" role="status" aria-live="polite"></div>
       </form>
 
-      <aside class="summary" aria-label="Your piece so far">
-        <header><b>Your piece</b><span>Draft</span></header>
+      <aside class="summary passport-draft" id="summary" aria-label="Your Gold Passport, filled in as you answer">
+        <header><b>Gold Passport</b><span id="ppNo">Draft</span></header>
         <dl>
-          <dt>Gold</dt><dd id="sSource">—</dd>
+          <dt>Gold from</dt><dd id="sSource">—</dd>
           <dt>Becomes</dt><dd id="sForm">—</dd>
-          <dt>Weight</dt><dd id="sWeight">7.8 g</dd>
+          <dt>Weight in</dt><dd id="sWeight">7.8 g</dd>
           <dt>Craft</dt><dd class="price" id="sPrice">—</dd>
           <dt>Ready</dt><dd>about 4 weeks after the sketch</dd>
         </dl>
+        <div class="pp-seal" id="ppSeal" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><defs><path id="ppcirc" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#ppcirc">Slow Gold · 18 karat · recycled ·</textPath></text></svg>
+          <b>750</b>
+        </div>
         <ul class="promises">
           <li><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>Nothing is melted until you approve the sketch.</li>
           <li><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>If we can’t agree on a design, your gold comes back untouched.</li>
@@ -414,16 +378,12 @@
     </div>
 
     <div class="faq" id="faq">
-      <div>
-        <h2 class="t-l" data-split>Before you decide.</h2>
-      </div>
+      <h2 class="t-l" data-split>Before you decide.</h2>
       <div class="faq-list">
-        <details><summary><span class="n">01</span>Is recycled gold as good as newly mined gold?<i></i></summary><div class="ans"><p>Yes. Gold is an element, so it does not wear out. Refining brings it back to the same purity as freshly mined gold, and every piece is hallmarked 585 (14k) or 750 (18k).</p></div></details>
-        <details><summary><span class="n">02</span>How do I get my gold to you?<i></i></summary><div class="ans"><p>Bring it to the atelier by appointment, or send it with insured shipping we arrange. We film the weighing and send you the video before anything is melted.</p></div></details>
-        <details><summary><span class="n">03</span>What if I don’t have enough gold?<i></i></summary><div class="ans"><p>We top it up with our recycled gold and tell you exactly how many grams came from you and how many from us. Both appear in your Gold Passport.</p></div></details>
-        <details><summary><span class="n">04</span>Can you keep the stones?<i></i></summary><div class="ans"><p>Yes. Stones are taken out before melting, cleaned and checked. We set them in the new piece or return them to you.</p></div></details>
-        <details><summary><span class="n">05</span>How long does it take?<i></i></summary><div class="ans"><p>About four weeks from the approved sketch to the finished piece. We send photos at every step.</p></div></details>
-        <details><summary><span class="n">06</span>What if I don’t like the sketch?<i></i></summary><div class="ans"><p>We draw again. If we still can’t find the right design together, you pay nothing for the sketches and your gold comes back exactly as you sent it.</p></div></details>
+        <div class="qa"><h3>What if I don’t have enough gold?</h3><p>We top it up with our recycled gold and tell you exactly how many grams came from you and how many from us. Both appear in your Gold Passport.</p></div>
+        <div class="qa"><h3>Can you keep the stones?</h3><p>Yes. Stones are taken out before melting, cleaned and checked. We set them in the new piece or return them to you.</p></div>
+        <div class="qa"><h3>How long does it take?</h3><p>About four weeks from the approved sketch to the finished piece. We send photos at every step.</p></div>
+        <div class="qa"><h3>What if I don’t like the sketch?</h3><p>We draw again. If we still can’t find the right design together, you pay nothing for the sketches and your gold comes back exactly as you sent it.</p></div>
       </div>
     </div>
   </div>
@@ -439,10 +399,14 @@
     </div>
   </div>
   <div class="wrap foot-info">
-    <div><h4>Atelier</h4><p>Visits by appointment<br>Tuesday to Saturday</p></div>
+    <div><h4>Atelier</h4><p>Visits by appointment<br>Tuesday to Saturday<br><a href="#begin">Book a visit</a></p></div>
     <div><h4>Write to us</h4><p><a href="mailto:hello@slowgold.com">hello@slowgold.com</a></p></div>
     <div><h4>Follow</h4><p><a href="#" rel="noopener">Instagram</a><br><a href="#" rel="noopener">Pinterest</a></p></div>
     <div><h4>Care</h4><p><a href="#">Care guide</a><br><a href="#">Resizing</a></p></div>
+  </div>
+  <div class="wrap foot-mark">
+    <div class="hallmark" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="fcirc" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#fcirc">Slow Gold · 18 karat · recycled ·</textPath></text></svg><b>750</b></div>
+    <p>Every piece leaves with its Gold Passport.</p>
   </div>
   <p class="wordmark" id="wordmark" aria-hidden="true">SLOW GOLD</p>
   <div class="wrap foot-base">
@@ -465,7 +429,6 @@
 <script src="vendor/lenis.min.js" defer></script>
 <script src="js/hero.js" defer></script>
 <script src="js/melt.js" defer></script>
-<script src="js/liquid.js" defer></script>
 <script src="js/site.js" defer></script>
 </body>
 </html>

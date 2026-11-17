@@ -7,11 +7,11 @@ Landing page for a jewellery studio that makes handcrafted pieces from recycled 
 | Chapter | What the visitor does and feels | Job on the page |
 |---|---|---|
 | Hero | Melts an old wedding band, pours it, hammers it; it cools onto a stone ledge | Wow moment, sets the idea: same gold, new shape |
-| I The gold | A slow surface of liquid gold (WebGL) that ripples under the cursor; the world's gold stock counts up and splits by use | Why recycled gold (World Gold Council figures) |
-| II Your gold | Scroll melts a ring, a broken chain and an earring into one pool of gold, which resolves into the finished band (WebGL, then a studio render) | The remake service, emotional core, first call to action |
-| III The making | Sideways walk through four weeks: sketch, melt, forge, Gold Passport | Proof of craft, removes doubt about the process |
-| IV Pieces | The page steps into daylight; four pieces shot the same way, with craft prices | Products and clear pricing logic |
-| V Begin | Four-step builder with a live "Your piece" summary, then FAQ | Conversion, risk reversal |
+| I Why recycled | An open drawer of forgotten family gold, lit by a torch the visitor moves; three plain facts | Why recycled gold (World Gold Council figures) |
+| II Your gold | The same three pieces are weighed in a ledger, heat up, melt into one pool (WebGL) and resolve into the finished band | The remake service, emotional core, first call to action |
+| III The making | Four weeks at one bench as printed plates: sketch, scale, crucible, mandrel, Gold Passport | Proof of craft, removes doubt about the process |
+| IV Pieces and prices | Morning comes in: four pieces in window light on travertine, with museum labels and craft prices | Products and clear pricing logic |
+| V Begin | Four-step builder that fills in a draft Gold Passport, stamped on sending; four open questions | Conversion, risk reversal |
 
 ## Design system
 
@@ -36,7 +36,7 @@ Requests open the visitor's email app with the request written out. To receive t
 
 ## Images
 
-Product images of The Keeper, The Gathering, The Heirloom and the final ring are 3D renders made for this site. The other photos come from the Figma moodboard. Replace those with licensed or own photography before a real launch. Prices are placeholders.
+Every image after the hero is a 3D render made for this site with three.js (one night light for the drawer and the bench, one morning window light for the pieces), so there is nothing to license. Hands and pieces worn on skin would need licensed photography. Prices are placeholders.
 
 ## Run locally
 
