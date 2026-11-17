@@ -147,7 +147,7 @@
     if (reduce) return;
     $$('.plate-row').forEach(row => {
       const pl = $('.plate', row), img = $('img', pl), txt = $$('.plate-text > *', row);
-      gsap.fromTo(pl, { clipPath: 'inset(12% 0% 12% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', scrollTrigger: { trigger: row, start: 'top 95%', end: 'top 45%', scrub: true } });
+      gsap.fromTo(pl, { clipPath: 'inset(10% 0% 10% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: row, start: 'top 85%', once: true } });
       gsap.fromTo(img, { scale: 1.14 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: row, start: 'top bottom', end: 'bottom top', scrub: true } });
       gsap.from(txt, { autoAlpha: 0, y: 18, duration: 1, stagger: .08, ease: 'power3.out', scrollTrigger: { trigger: row, start: 'top 70%', once: true } });
     });
