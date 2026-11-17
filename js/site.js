@@ -64,17 +64,12 @@
     });
     ScrollTrigger.refresh();
   });
-  if (!reduce) $$('[data-fade]').forEach(el => gsap.from(el, { autoAlpha: 0, y: 24, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }));
 
   /* ================= 01 — THE GOLD ================= */
   (() => {
     const lq = window.SGLiquid && $('#liquid') ? window.SGLiquid($('#liquid')) : null;
     if (!lq) $('#liquid').style.background = 'radial-gradient(60% 60% at 65% 45%, #4a3515, #0b0a09)';
     if (!reduce) gsap.to('#liquid', { yPercent: 18, scale: 1.08, ease: 'none', scrollTrigger: { trigger: '.gold-open', start: 'top top', end: 'bottom top', scrub: true } });
-    const big = $('.big-num [data-count]'), o = { v: 0 };
-    const fmt = v => Math.round(v).toLocaleString('en');
-    if (!reduce) { big.textContent = fmt(0);
-      gsap.to(o, { v: +big.dataset.count, duration: 2.4, ease: 'expo.out', onUpdate: () => big.textContent = fmt(o.v), scrollTrigger: { trigger: '.big-num', start: 'top 85%', once: true } }); }
     const segs = $$('.share-bar > div'), legend = $$('.share-legend > div');
     if (!reduce) {
       gsap.set(segs, { '--s': 0, opacity: 0 }); gsap.set(legend, { autoAlpha: 0, y: 12 });
@@ -155,9 +150,9 @@
     };
     gsap.matchMedia().add({ wide: '(min-width: 901px)' }, ctx => {
       if (ctx.conditions.wide && !reduce) {
-        const dist = () => track.scrollWidth - innerWidth;
+        const dist = () => track.scrollWidth - innerWidth, len = () => Math.min(dist(), innerHeight * 2.5);
         const tween = gsap.to(track, { x: () => -dist(), ease: 'none',
-          scrollTrigger: { trigger: pin, start: 'top top', end: () => '+=' + dist(), pin: true, scrub: .8, invalidateOnRefresh: true, anticipatePin: 1,
+          scrollTrigger: { trigger: pin, start: 'top top', end: () => '+=' + len(), pin: true, scrub: .8, invalidateOnRefresh: true, anticipatePin: 1,
             onUpdate: s => line.style.setProperty('--p', s.progress.toFixed(3)) } });
         $$('.step', track).forEach(step => {
           gsap.from($$('.step-no, .t-l, .body', step), { y: 40, autoAlpha: 0, stagger: .06, ease: 'none',

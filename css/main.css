@@ -15,8 +15,8 @@
   --bone-faint:rgba(243,239,230,.14);
   --cream:#fffbd3;
   --white:#ffffff;
-  --light:#f5f5f3;
-  --light-2:#ebeae6;
+  --light:#efe9df;
+  --light-2:#e5ddcf;
   --ink:#121110;
   --ink-soft:rgba(18,17,16,.66);
   --ink-faint:rgba(18,17,16,.13);
@@ -41,7 +41,7 @@
   --t-xl:clamp(46px, 7vw, 140px);
   --t-l:clamp(38px, 4.6vw, 88px);
   --t-m:clamp(24px, 2vw, 36px);
-  --t-body:clamp(16px, 1.05vw, 18px);
+  --t-body:clamp(17px, 1.1vw, 18px);
   --ease:cubic-bezier(.7,0,.2,1);
   --ease-out:cubic-bezier(.16,1,.3,1);
   color-scheme:dark;
@@ -110,7 +110,7 @@ html:not(.is-loading) .loader{opacity:0;visibility:hidden;pointer-events:none}
 #sound[aria-pressed="false"] .wave{opacity:0}
 #sound .x{opacity:0}
 #sound[aria-pressed="false"] .x{opacity:1}
-#sound kbd{font-family:inherit;font-size:11px;opacity:.5;margin-left:2px}
+#sound kbd{font-family:inherit;font-size:11px;opacity:.7;margin-left:2px}
 .tbtn{font-family:var(--f-sans);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);background:none;border:0;padding:6px 0;cursor:pointer}
 .tbtn:hover{color:var(--white)}
 
@@ -182,10 +182,10 @@ html:not(.is-loading) .loader{opacity:0;visibility:hidden;pointer-events:none}
 .bar.show{transform:none}
 .bar::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom, rgba(11,10,9,.82), rgba(11,10,9,.55));-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:background .5s ease}
 .bar.light{color:var(--ink)}
-.bar.light::before{background:linear-gradient(to bottom, rgba(245,245,243,.9), rgba(245,245,243,.7))}
+.bar.light::before{background:linear-gradient(to bottom, rgba(239,233,223,.92), rgba(239,233,223,.74))}
 .bar-logo{font-family:var(--f-sans);font-size:15px;text-decoration:none;justify-self:start}
 .bar-chapters{display:flex;gap:clamp(16px, 2.2vw, 40px);font-size:13px;font-weight:450}
-.bar-chapters a{display:inline-flex;align-items:baseline;gap:8px;text-decoration:none;opacity:.45;transition:opacity .35s ease;white-space:nowrap}
+.bar-chapters a{display:inline-flex;align-items:baseline;gap:8px;text-decoration:none;opacity:.6;transition:opacity .35s ease;white-space:nowrap}
 .bar-chapters a i{font-style:normal;font-size:11px;font-variant-numeric:tabular-nums;opacity:.8}
 .bar-chapters a:hover,.bar-chapters a.on{opacity:1}
 .bar-cta{justify-self:end}
@@ -206,11 +206,11 @@ html:not(.is-loading) .loader{opacity:0;visibility:hidden;pointer-events:none}
 .eyebrow{display:flex;gap:14px;align-items:baseline;margin:0 0 clamp(20px, 2.6vw, 40px);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
 .eyebrow b{font-weight:500;font-variant-numeric:tabular-nums;opacity:.55}
 .t-xl,.t-l,.t-m{margin:0;font-weight:300;text-wrap:balance}
-.t-xl{font-size:var(--t-xl);line-height:.94;letter-spacing:-.05em}
-.t-l{font-size:var(--t-l);line-height:.98;letter-spacing:-.045em}
+.t-xl{font-size:var(--t-xl);line-height:.95;letter-spacing:-.045em}
+.t-l{font-size:var(--t-l);line-height:1;letter-spacing:-.035em}
 .t-m{font-size:var(--t-m);line-height:1.12;letter-spacing:-.025em;font-weight:350}
-em,.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spacing:-.02em}
-.t-xl em,.t-l em{font-size:1.04em;letter-spacing:-.035em}
+/* the serif is an engraving: capitals only, on brand objects (wordmark, piece names, passport, hallmark) */
+.engraved,.piece-name{font-family:var(--f-accent);font-weight:400;font-style:normal;text-transform:uppercase;letter-spacing:.08em}
 .body{margin:0;max-width:34em;color:var(--bone-soft);text-wrap:pretty}
 .body-lg{font-size:clamp(18px, 1.35vw, 22px);line-height:1.45;letter-spacing:-.012em}
 .label{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
@@ -284,7 +284,7 @@ em,.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spa
 }
 
 /* ============================== 02 — YOUR GOLD ============================== */
-#remake{height:400vh;background:var(--bg)}
+#remake{height:300vh;background:var(--bg)}
 #remake .stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 #metal{position:absolute;inset:0;width:100%;height:100%;display:block}
 #remake .glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 50% at var(--gx, 64%) 50%, rgba(255,120,40,var(--heat,0)) 0%, transparent 70%);opacity:.4}
@@ -293,7 +293,7 @@ em,.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spa
   mask-image:radial-gradient(closest-side, #000 calc(var(--m, 0) * 74%), transparent calc(var(--m, 0) * 100%))}
 .final-ring img{width:100%;height:100%;object-fit:cover}
 .final-cap{position:absolute;z-index:2;left:0;top:0;transform:translate(-50%, 0);text-align:center;opacity:0;pointer-events:none;white-space:nowrap}
-.final-cap b{display:block;font-weight:400;font-size:15px}
+.final-cap b{display:block;font-family:var(--f-accent);font-weight:400;font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
 .final-cap span{font-size:13px;color:var(--bone-soft)}
 .melt-copy{position:absolute;z-index:3;left:max(var(--pad), env(safe-area-inset-left, 0px));top:0;bottom:0;width:min(36vw, 600px);display:flex;flex-direction:column;justify-content:center;padding-block:120px 70px}
 .melt-stages{display:grid}
@@ -341,7 +341,7 @@ em,.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spa
 .timeline .wk{white-space:nowrap}
 .making-pin{height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:clamp(24px, 4vh, 50px);padding-block:90px 40px}
 .track{display:flex;gap:clamp(60px, 8vw, 160px);padding-inline:max(var(--pad), env(safe-area-inset-left, 0px));width:max-content;will-change:transform}
-.step{width:min(80vw, 1120px);display:grid;grid-template-columns:minmax(0, .85fr) minmax(0, 1.15fr);gap:clamp(30px, 4vw, 80px);align-items:center}
+.step{width:min(72vw, 1000px);display:grid;grid-template-columns:minmax(0, .85fr) minmax(0, 1.15fr);gap:clamp(30px, 4vw, 80px);align-items:center}
 .step-no{display:block;margin-bottom:clamp(20px, 3vh, 36px);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-soft)}
 .step-no b{color:var(--gold);font-weight:500}
 .step .t-l{font-size:clamp(40px, 4.2vw, 80px)}
@@ -362,7 +362,7 @@ em,.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spa
 /* the gold passport: a modern certificate */
 .passport{width:min(100%, 480px);background:linear-gradient(160deg, #1b1916, #0f0e0c);border:1px solid rgba(217,178,107,.28);padding:clamp(24px, 2.6vw, 38px);position:relative;box-shadow:0 50px 100px rgba(0,0,0,.6)}
 .passport header{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;margin-bottom:6px;border-bottom:1px solid var(--bone-faint)}
-.passport header b{font-weight:400;font-size:20px;letter-spacing:-.02em}
+.passport header b{font-family:var(--f-accent);font-weight:400;font-size:17px;text-transform:uppercase;letter-spacing:.1em}
 .passport header span{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 .passport dl{margin:0;display:grid;grid-template-columns:auto 1fr;column-gap:24px}
 .passport dt,.passport dd{margin:0;padding:12px 0;border-bottom:1px solid rgba(243,239,230,.08)}
@@ -442,7 +442,7 @@ legend{padding:0;margin:0 0 clamp(22px, 2.6vw, 36px);font-weight:300;font-size:c
 .opt span{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:20px;padding:20px 4px 20px 0;border-bottom:1px solid var(--ink-faint);transition:padding .45s var(--ease-out), background .3s ease}
 .opt span b{font-weight:400;font-size:clamp(18px, 1.4vw, 22px);letter-spacing:-.015em}
 .opt span small{grid-column:1;font-size:14px;color:var(--ink-soft);margin-top:2px}
-.opt span::after{content:"";grid-column:2;grid-row:1 / span 2;width:22px;height:22px;border-radius:50%;border:1px solid rgba(18,17,16,.35);transition:all .35s ease}
+.opt span::after{content:"";grid-column:2;grid-row:1 / span 2;width:22px;height:22px;border-radius:50%;border:1px solid rgba(18,17,16,.55);transition:all .35s ease}
 .opt:hover span{padding-left:10px}
 .opt input:checked + span{padding-left:14px}
 .opt input:checked + span::after{background:var(--ink);border-color:var(--ink);box-shadow:inset 0 0 0 5px var(--light)}
@@ -465,7 +465,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .field{display:flex;flex-direction:column;gap:8px}
 .field.full{grid-column:1 / -1}
 .field label{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-.field input,.field textarea{font:inherit;font-size:18px;color:var(--ink);background:none;border:0;border-bottom:1px solid rgba(18,17,16,.3);border-radius:0;padding:10px 0;width:100%;transition:border-color .3s ease}
+.field input,.field textarea{font:inherit;font-size:18px;color:var(--ink);background:none;border:0;border-bottom:1px solid rgba(18,17,16,.55);border-radius:0;padding:10px 0;width:100%;transition:border-color .3s ease}
 .field textarea{min-height:110px;resize:vertical;line-height:1.45}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
 .field .err{font-size:13px;color:#a12a10;min-height:1em}
@@ -537,3 +537,12 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
   .bar{transition:none}
   .fs.on{animation:none}
 }
+
+/* ---------- foundations pass ---------- */
+.piece-name{grid-column:1;margin:0;font-size:clamp(19px, 1.5vw, 24px);line-height:1.15}
+.skip-ch{margin-top:22px}
+.skip-ch svg{width:14px;height:14px}
+.making-head > div:last-child{display:flex;flex-direction:column;align-items:flex-start}
+.light-zone ::placeholder{color:rgba(18,17,16,.5)}
+@media (max-width: 520px){ .bar-chapters .lg{display:none} }
+@media (max-width: 400px){ .bar-chapters a i{display:none} .bar .bar-cta{padding-inline:14px} .bar{column-gap:10px} }
