@@ -94,7 +94,7 @@
     const sec = $('#remake'), cv = $('#metal');
     const metal = window.SGMelt ? window.SGMelt(cv) : null;
     if (!metal) { sec.classList.add('nometal'); $$('.heir', sec).forEach(t => t.hidden = true); }
-    const stages = $$('.melt-stage', sec), heirs = [0, 1, 2].map(i => $('#heir' + i));
+    const stages = $$('.melt-stage', sec), heirs = [0, 1, 2].map(i => $('#heir' + i)), hots = [0, 1, 2].map(i => $('#heirHot' + i));
     const HEIR = [{ w: .31, dx: 0, dy: 0 }, { w: .34, dx: -.02, dy: .01 }, { w: .11, dx: .004, dy: -.01 }];
     const temp = $('#temp'), tempBox = $('#tempBox'), glow = $('.glow', sec), meltBar = $('#meltBar');
     const ring = $('#finalRing'), cap = $('#finalCap');
@@ -112,10 +112,11 @@
       const pts = metal.points();
       /* the real pieces warm up (glow, then go orange) and hand over to the molten metal */
       const warm = gsap.utils.clamp(0, 1, (p - .06) / .12), gone = gsap.utils.clamp(0, 1, (p - .15) / .07);
-      heirs.forEach((h, i) => { const k = HEIR[i], w = pts[i].s * k.w;
-        h.style.width = w + 'px';
-        gsap.set(h, { x: pts[i].x + k.dx * pts[i].s, y: pts[i].y + k.dy * pts[i].s, xPercent: -50, yPercent: -50, opacity: 1 - gone,
-          filter: `drop-shadow(0 18px 30px rgba(0,0,0,.55)) drop-shadow(0 0 ${(warm * 22).toFixed(1)}px rgba(255,120,30,${(warm * .9).toFixed(2)})) sepia(${(warm * .6).toFixed(2)}) saturate(${(1 + warm * 1.6).toFixed(2)}) brightness(${(1 + warm * .35).toFixed(2)})` }); });
+      heirs.forEach((h, i) => { const k = HEIR[i], w = Math.round(pts[i].s * k.w), hot = hots[i];
+        if (h._w !== w){ h._w = w; h.style.width = hot.style.width = w + 'px'; }   /* size only on layout changes */
+        const pos = { x: pts[i].x + k.dx * pts[i].s, y: pts[i].y + k.dy * pts[i].s, xPercent: -50, yPercent: -50 };
+        gsap.set(h, { ...pos, opacity: (1 - gone) * (1 - warm * .6) });
+        gsap.set(hot, { ...pos, opacity: warm * (1 - gone) }); });
       /* the molten gold resolves into the finished piece */
       const c = pts[3], H = cv.clientHeight, W = cv.clientWidth;
       const d = Math.min(H * .74, W * (W > 900 && W / H > 1 ? .44 : .9));
@@ -125,14 +126,14 @@
       cv.style.opacity = (Math.min(gsap.utils.clamp(0, 1, (p - .14) / .06), 1 - gsap.utils.clamp(0, 1, (p - .66) / .1))).toFixed(3);
       const ca = gsap.utils.clamp(0, 1, (p - .8) / .08);
       gsap.set(cap, { x: c.x, y: c.y + d * .43, opacity: ca });
-      glow.style.setProperty('--gx', (c.x / W * 100).toFixed(1) + '%');
+      const gx = (c.x / W * 100).toFixed(1) + '%'; if (glow._gx !== gx){ glow._gx = gx; glow.style.setProperty('--gx', gx); }
     };
     const update = p => {
       if (metal) metal.progress = p;
       const hot = gsap.utils.clamp(0, 1, (p - .17) / .21) * (1 - gsap.utils.clamp(0, 1, (p - .6) / .2));
       temp.textContent = Math.round(21 + hot * 1043).toLocaleString('en') + ' °C';
       tempBox.classList.toggle('hot', hot > .05);
-      glow.style.setProperty('--heat', (hot * .55).toFixed(3));
+      glow.style.opacity = (hot * .4).toFixed(3);
       meltBar.style.setProperty('--p', p.toFixed(3));
       show(p < .2 ? 0 : p < .5 ? 1 : p < .74 ? 2 : 3);
       place(p);
