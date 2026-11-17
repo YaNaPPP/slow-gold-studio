@@ -20,6 +20,17 @@ Landing page for a jewellery studio that makes handcrafted pieces from recycled 
 - Script: Ballet, hero only, as in the Figma file
 - Host Grotesk and Ballet are self-hosted in `assets/fonts/` and preloaded; a short loader holds the page until fonts and the hero scene are ready
 
+## Composition system
+
+Taken from the hero, where small captions sit at the corners and the centre of a line, joined by hairline rules.
+
+- Every chapter is framed by `.frame` rows: left caption, rule, centre caption, rule, right caption. Full-screen chapters (01, 02) carry one at the top and one at the bottom edge, like the hero; long chapters open with a folio frame (03, 04, 05); plates and pieces close with a two-part caption frame; the footer ends on one.
+- Three alignment lines only: the left page margin, the centre axis and the right page margin.
+- Left caption orients (chapter number and name, week, piece name); right caption measures (grams, temperature, price); the centre carries the action or the state.
+- Headlines sit on the line above the bottom frame or below the top frame, never floating.
+- Captions use the hero's UI type (Helvetica Neue stack, small size, tight tracking), not uppercase labels.
+- On phones the centre slot drops out and the frame keeps its two corners.
+
 ## Tech
 
 - Plain HTML, CSS and JavaScript, no build step

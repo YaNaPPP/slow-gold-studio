@@ -250,8 +250,6 @@ html:not(.is-loading) .loader{opacity:0;visibility:hidden;pointer-events:none}
 .drawer-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;display:grid;grid-template-columns:minmax(0, 1.25fr) minmax(0, 1fr);gap:clamp(24px, 5vw, 110px);align-items:end;padding-bottom:clamp(40px, 8vh, 90px)}
 .drawer-copy .t-xl{max-width:9em}
 .drawer-copy .body{color:rgba(243,239,230,.86)}
-.drawer-hint{position:absolute;z-index:2;right:max(var(--pad), env(safe-area-inset-right, 0px));top:clamp(90px, 14vh, 130px);margin:0;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-soft);transition:opacity .8s ease}
-.drawer.moved .drawer-hint{opacity:0}
 .facts{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:clamp(24px, 4vw, 80px);padding-block:clamp(80px, 9vw, 150px) clamp(90px, 10vw, 170px)}
 .fact{border-top:1px solid var(--bone-faint);padding-top:22px}
 .fact b{display:block;font-weight:300;font-size:clamp(40px, 4.2vw, 76px);line-height:1;letter-spacing:-.045em;color:var(--bone)}
@@ -509,3 +507,68 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 @media (max-width: 400px){ .bar-chapters a i{display:none} .bar .bar-cta{padding-inline:14px} .bar{column-gap:10px} }
 @media (max-width: 700px){ .drawer img{object-position:44% 30%} }
 .plate img,.drawer img{will-change:transform}
+
+/* ============================== COMPOSITION SYSTEM ==============================
+   Taken from the hero: small sans captions sit at the corners and the centre of a line,
+   joined by hairline rules, so every chapter is framed the same way.
+   .frame = [left] rule [centre] rule [right]; left, centre and right align to the page
+   margins and the centre axis. Chapters vary what sits inside the frame, never the frame. */
+.frame{display:grid;grid-template-columns:auto minmax(24px,1fr) auto minmax(24px,1fr) auto;align-items:center;column-gap:clamp(14px, 1.6vw, 32px);
+  font-family:var(--f-sans);font-size:var(--s-small);line-height:1.15;letter-spacing:-.01em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.frame > i{display:block;height:1px;background:var(--rule)}
+.light-zone .frame > i,.light-zone.frame > i{background:rgba(18,17,16,.2)}
+.frame .c{text-align:center}
+.frame .r{text-align:right;justify-self:end}
+.frame b{font-weight:400}
+.frame-cap,.frame-label{grid-template-columns:auto minmax(24px,1fr) auto}
+/* full-screen chapters carry a frame at the top and the bottom edge, like the hero */
+.frame-top,.frame-bottom{position:absolute;z-index:4;left:max(var(--pad), env(safe-area-inset-left, 0px));right:max(var(--pad), env(safe-area-inset-right, 0px));color:var(--bone)}
+.frame-top{top:clamp(86px, 11vh, 110px)}
+.frame-bottom{bottom:calc(var(--pad) * .9)}
+.frame-folio{padding-top:clamp(36px, 5vw, 70px);color:inherit}
+.frame-cap{margin:0;padding-top:14px;background:var(--bg)}
+.frame-label{width:100%}
+.frame-label .piece-name{font-size:clamp(17px, 1.3vw, 21px)}
+.frame-label .r{font-family:var(--f-sans)}
+/* 01: headline and body sit on the line above the bottom frame */
+.drawer-copy{padding-bottom:calc(var(--pad) * .9 + 54px)}
+.drawer .drawer-hint{transition:opacity .8s ease}
+.drawer.moved .drawer-hint{opacity:.35}
+/* 02: readouts live in the frame */
+#remake .frame-bottom .meter{position:relative;height:1px;background:var(--rule)}
+#remake .frame-bottom .meter i{position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(var(--p,0))}
+#tempBox b{transition:color .4s ease}
+#tempBox.hot b{color:var(--ember)}
+.melt-copy{padding-block:150px 110px}
+/* 03 and 04: folios open the chapter; captions close each plate */
+.making-head{padding-top:clamp(70px, 8vw, 140px)}
+.daylight{padding-top:clamp(40px, 5vw, 80px)}
+.pieces-head{margin-top:clamp(70px, 8vw, 140px)}
+.begin-head{margin-top:clamp(60px, 7vw, 120px)}
+#begin{padding-top:clamp(20px, 3vw, 40px)}
+.plate-text .wk{display:none}
+.label-card{padding-top:16px}
+/* footer: the last frame, the hallmark at its centre */
+.foot-base{display:grid;font-family:var(--f-sans);font-size:var(--s-small)}
+.foot-seal{display:inline-flex;align-items:center;gap:14px;color:var(--bone-soft)}
+.foot-seal .hallmark{width:48px;height:48px}
+.foot-seal .hallmark b{font-size:12px}
+.foot-base nav{display:flex;gap:20px}
+@media (max-width: 900px){
+  .frame{grid-template-columns:auto minmax(18px,1fr) auto}
+  .frame > .c,.frame > .c + i{display:none}
+  .frame-cap,.frame-label{grid-template-columns:auto minmax(18px,1fr) auto}
+  .frame-top{top:84px}
+  .frame-top > span:first-child{max-width:46vw;overflow:hidden;text-overflow:ellipsis}
+  .frame-bottom .r{white-space:normal;text-align:right;max-width:44vw}
+  .drawer-copy{padding-bottom:calc(var(--pad) * .9 + 60px)}
+  .melt-copy{padding-bottom:70px}
+  #remake .frame-bottom{grid-template-columns:auto minmax(18px,1fr) auto}
+  #remake .frame-bottom .meter{display:block}
+  #remake .frame-bottom .meter + .c,#remake .frame-bottom .meter + .c + i{display:none}
+  .foot-base{grid-template-columns:1fr;row-gap:16px}
+  .foot-base > i{display:none}
+  .foot-base .c{display:inline-flex}
+  .foot-base .r{justify-self:start}
+}
+.foot-base{border-top:0;padding-top:30px}

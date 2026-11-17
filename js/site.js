@@ -96,7 +96,7 @@
     if (!metal) { sec.classList.add('nometal'); $$('.heir', sec).forEach(t => t.hidden = true); }
     const stages = $$('.melt-stage', sec), heirs = [0, 1, 2].map(i => $('#heir' + i)), hots = [0, 1, 2].map(i => $('#heirHot' + i));
     const HEIR = [{ w: .31, dx: 0, dy: 0 }, { w: .34, dx: -.02, dy: .01 }, { w: .11, dx: .004, dy: -.01 }];
-    const temp = $('#temp'), tempBox = $('#tempBox'), glow = $('.glow', sec), meltBar = $('#meltBar');
+    const stageLbl = $('#stageLbl'), temp = $('#temp'), tempBox = $('#tempBox'), glow = $('.glow', sec), meltBar = $('#meltBar');
     const ring = $('#finalRing'), cap = $('#finalCap');
     let cur = 0;
     const show = i => {
@@ -136,6 +136,7 @@
       glow.style.opacity = (hot * .4).toFixed(3);
       meltBar.style.setProperty('--p', p.toFixed(3));
       show(p < .2 ? 0 : p < .5 ? 1 : p < .74 ? 2 : 3);
+      const lbl = ['Weighed', 'Melting', 'One pool', 'Finished'][p < .2 ? 0 : p < .5 ? 1 : p < .74 ? 2 : 3]; if (stageLbl.textContent !== lbl) stageLbl.textContent = lbl;
       place(p);
     };
     ScrollTrigger.create({ trigger: sec, start: 'top top', end: 'bottom bottom', scrub: reduce ? true : .8, onUpdate: s => update(s.progress),
